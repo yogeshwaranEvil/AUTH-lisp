@@ -80,3 +80,7 @@ async def login(request: UserRequest):
         return {"status": "success", "message": "Authentication successful"}
     else:
         raise HTTPException(status_code=401, detail="Invalid credentials")
+
+@app.get("/")
+async def read_root():
+    return {"message": "Hello, World!"}
